@@ -1,0 +1,14 @@
+{
+  "name": "nodejs-collection",
+  "version": "1.0.0",
+  "description": "This Node app is a simple collection app, designed to utilize Redis to make data persistent with an option to add/remove recorords and load item details, using EJS templates.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "hippers",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
