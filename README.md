@@ -8,16 +8,45 @@ Clone this repo and run this command:
 npm install
 ```
 
-Once installation is complete, run the app and serve it to localhost:
+Start Redis locally:
 
 ```bash
-npm run
+redis-server
 ```
 
-To run a tests, use the following command:
+Once complete, run the app and serve it to localhost:
 
 ```bash
-npm tests
+npm start
 ```
+
+
+
+## Redis
+
+In order to insall Redis locally, run:
+
+```bash
+brew install redis
+```
+
+To start Redis, run:
+
+```bash
+redis-server
+```
+
+
+
+
+## Tests
+
+To run tests, use the following command:
+
+```bash
+npm test
+```
+
+Libraries used for tests - `supertest`, `mocha`
 
 
