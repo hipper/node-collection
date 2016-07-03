@@ -1,8 +1,11 @@
-var request = require('supertest');
+'use strict';
+
 var app = require('./app');
 
+var request = require('supertest');
 var redis = require('redis');
 var client = redis.createClient();
+
 client.select('test'.length);
 client.flushdb();
 

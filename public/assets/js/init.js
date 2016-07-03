@@ -21,7 +21,11 @@ $(document).ready(function() {
             type: 'POST', url: '/items', data: formData
         })
         .done(function(item) {
-            appendNewItem([item]);
+            appendNewItem({
+                error: item.error,
+                errorMessage: item.errorMessage,
+                data: [item.data]
+            });
             form.trigger('reset');
         })
         .fail(function() {
@@ -50,8 +54,9 @@ $(document).ready(function() {
         });
     });
 
-    function appendNewItem(items) {
+    function appendNewItem(data) {
         var list = [];
+        var items = data.data; // {error, errorMessage, data}
         var content, item;
 
         for (var i in items) {
