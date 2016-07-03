@@ -10,7 +10,7 @@ redis.hset('items', 'Two', 'Two description');
 redis.hset('items', 'Three', 'Three description');
 
 /**
- *  Load most recent items from the database
+ * Load most recent items from the database
  */
 exports.getAll = function(callback) {
     redis.hkeys('items', function(error, data) {
@@ -20,7 +20,9 @@ exports.getAll = function(callback) {
 };
 
 /**
- *  Get a single item
+ * Get a single item
+ * @param {String} item
+ * @param {Function} callback
  */
 exports.get = function(item, callback) {
     redis.hget('items', item, function(error, description) {
@@ -30,7 +32,9 @@ exports.get = function(item, callback) {
 };
 
 /**
- *  Save item to the database
+ * Save item to the database
+ * @param {Object} item
+ * @param {Function} callback
  */
 exports.save = function(item, callback) {
     redis.hset('items', item.name, item.description, function(error, reply) {
@@ -40,7 +44,9 @@ exports.save = function(item, callback) {
 };
 
 /**
- *  Remove item from the database
+ * Remove item from the database
+ * @param {String} item
+ * @param {Function} callback
  */
 exports.remove = function(item, callback) {
     redis.hdel('items', item, function(error) {

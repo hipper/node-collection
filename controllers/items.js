@@ -3,7 +3,7 @@
 var itemsModel = require('../models/items');
 
 /**
- *  Get our items
+ * Get our items
  */
 exports.getAll = function(req, res, next) {
     itemsModel.getAll(function(err, data) {
@@ -16,7 +16,7 @@ exports.getAll = function(req, res, next) {
 };
 
 /**
- *  Get a single item
+ * Get a single item
  */
 exports.get = function(req, res, next) {
     itemsModel.get(req.params.name, function(err, data) {
@@ -32,7 +32,7 @@ exports.get = function(req, res, next) {
 };
 
 /**
- *  Post item
+ * Post item
  */
 exports.post = function(req, res, next) {
     var body = req.body;
@@ -52,7 +52,7 @@ exports.post = function(req, res, next) {
 };
 
 /**
- *  Remove item
+ * Remove item
  */
 exports.remove = function(req, res, next) {
     itemsModel.remove(req.params.name, function(err, data) {
